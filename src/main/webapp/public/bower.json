@@ -7,7 +7,7 @@
   ],
   "license": "ISC",
   "homepage": "https://github.com/zshnr/dd-daytripper",
-  "moduleType": [],
+  "moduleType": ["amd", "globals", "node"],
   "ignore": [
     "**/.*",
     "node_modules",

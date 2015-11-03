@@ -1,38 +1,22 @@
-var dayTripperApp = angular.module('dayTripperApp', []);
-
-restApp.constant('baseURL','/courses/');
-
-restApp.controller('CoursesController', function (baseURL, $scope,$http) {
-    fetchCourses();
-    $scope.noCourseSelected = true;
-    $scope.courseBeingUpdated = false;
-
-    function fetchCourses() {
-        function storeCourses(data) {
-            $scope.courses = data;
+(function() {
+  angular.module('dayTripperApp', ['ui.calendar', 'ui.bootstrap'])
+         .controller('bookingController', [bookingController]);
+  function bookingController(){
+    // var date = new Date();
+    // var d = date.getDate();
+    // var m = date.getMonth();
+    // var y = date.getFullYear();
+    this.eventSource = {};
+    this.uiConfig = {
+      calendar: {
+        height: 250,
+        editable: true,
+        header:{
+          left: 'month basicWeek basicDay agendaWeek agendaDay',
+          center: 'title',
+          right: 'today prev,next'
         }
-        $http.get(baseURL).success(storeCourses);
-    }
-    $scope.fetchCourses = fetchCourses;
-
-    $scope.beginUpdateOfCourse = function(course) {
-        $scope.courseBeingUpdated = angular.copy(course);
+      }
     };
-    $scope.updateCourse = function() {
-        function resetForm() {
-            $scope.courseBeingUpdated = false;
-            fetchCourses();
-        }
-        var course = $scope.courseBeingUpdated;
-        $http.put(baseURL + course.id, course).success(resetForm);
-    };
-    $scope.selectCourse = function(course) {
-        $scope.noCourseSelected = false;
-        $scope.selectedCourse = course;
-    };
-    $scope.deleteCourse = function(course) {
-      $http.delete(baseURL + course.id );
-      $scope.noCourseSelected = true;
-      fetchCourses();
-    };
-});
+  };
+})();
