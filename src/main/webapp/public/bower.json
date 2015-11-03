@@ -1,0 +1,21 @@
+{
+  "name": "daytripper",
+  "description": "Daytripper app mini-project",
+  "main": "app.js",
+  "authors": [
+    "Zeeshan Rasool <zshnr@zshnr.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/zshnr/dd-daytripper",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-bootstrap-calendar": "~0.15.5"
+  }
+}

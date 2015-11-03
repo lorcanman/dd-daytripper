@@ -1,4 +1,4 @@
-var restApp = angular.module('coursesApp', []);
+var dayTripperApp = angular.module('dayTripperApp', []);
 
 restApp.constant('baseURL','/courses/');
 
@@ -6,7 +6,7 @@ restApp.controller('CoursesController', function (baseURL, $scope,$http) {
     fetchCourses();
     $scope.noCourseSelected = true;
     $scope.courseBeingUpdated = false;
-    
+
     function fetchCourses() {
         function storeCourses(data) {
             $scope.courses = data;
@@ -14,7 +14,7 @@ restApp.controller('CoursesController', function (baseURL, $scope,$http) {
         $http.get(baseURL).success(storeCourses);
     }
     $scope.fetchCourses = fetchCourses;
-    
+
     $scope.beginUpdateOfCourse = function(course) {
         $scope.courseBeingUpdated = angular.copy(course);
     };
@@ -31,7 +31,7 @@ restApp.controller('CoursesController', function (baseURL, $scope,$http) {
         $scope.selectedCourse = course;
     };
     $scope.deleteCourse = function(course) {
-      $http.delete(baseURL + course.id ); 
+      $http.delete(baseURL + course.id );
       $scope.noCourseSelected = true;
       fetchCourses();
     };
