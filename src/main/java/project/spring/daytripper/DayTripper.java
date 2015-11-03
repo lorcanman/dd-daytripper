@@ -1,12 +1,12 @@
-package demos.spring.boot;
+package project.spring.daytripper;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HelloSpringBoot {
+public class DayTripper {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HelloSpringBoot.class);
+		SpringApplication.run(DayTripper.class);
 	}
 }

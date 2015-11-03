@@ -1,4 +1,4 @@
-package demos.spring.boot;
+package project.spring.daytripper;
 
 import java.util.Collection;
 
@@ -11,34 +11,34 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/courses")
-public class CoursesController {
+@RequestMapping("/users")
+public class UsersController {
 
-    private CourseList courses;
+    private UserList users;
 
-    @Resource(name = "courses")
-    public void setCourseList(CourseList courses) {
-        this.courses = courses;
+    @Resource(name = "users")
+    public void setUserList(UserList users) {
+        this.users = users;
     }
 
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
-    public Collection<Course> viewAll() {
-        return courses.list();
+    public Collection<User> viewAll() {
+        return users.list();
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT, consumes = "application/json")
-    public Course addOrUpdate(@RequestBody Course course) {
-        courses.replace(course);
-        return course;
+    public User addOrUpdate(@RequestBody User user) {
+        users.replace(user);
+        return user;
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
-    public Course getById(@PathVariable("id") String id) {
-        return courses.get(id);
+    public User getById(@PathVariable("id") String id) {
+        return users.get(id);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public void deleteById(@PathVariable("id") String id) {
-        courses.delete(id);
+        users.delete(id);
     }
 }
