@@ -11,5 +11,5 @@ public class DayTripper {
 //		 try (ClassPathXmlApplicationContext context =
 //			        new ClassPathXmlApplicationContext("spring/dtApplicationContext.xml")){
 //	}
-		 SpringApplication.run(DayTripper.class);
+		 //SpringApplication.run(DayTripper.class);
 }}
