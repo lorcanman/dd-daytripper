@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "./node_modules/.bin/karma start my.conf.js",
-    "bower": "./node_modules/.bin/bower",
+    "bower": "./node_modules/.bin/bower install --save",
     "karma": "./node_modules/.bin/karma"
   },
   "author": "",
