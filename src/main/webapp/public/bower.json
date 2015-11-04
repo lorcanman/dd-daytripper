@@ -7,7 +7,11 @@
   ],
   "license": "ISC",
   "homepage": "https://github.com/zshnr/dd-daytripper",
-  "moduleType": ["amd", "globals", "node"],
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
   "ignore": [
     "**/.*",
     "node_modules",
@@ -16,6 +20,16 @@
     "tests"
   ],
   "dependencies": {
-    "angular-bootstrap-calendar": "~0.15.5"
+    "angular-bootstrap-calendar": "~0.15.5",
+    "mobile-angular-ui": "~1.2.0-rc.3",
+    "angular": "~1.4.7",
+    "angular-bootstrap": "~0.14.3",
+    "angular-ui-calendar": "~1.0.1",
+    "bootstrap": "~3.3.5",
+    "fullcalendar": "~2.4.0"
+  },
+  "resolutions": {
+    "angular": "1.3.15",
+    "fullcalendar": "2.3.1"
   }
 }
