@@ -7,7 +7,7 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>java:project.spring.daytripper.DayTripper</config>
+		<config>java:spring.DayTripper</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

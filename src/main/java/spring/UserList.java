@@ -1,4 +1,4 @@
-package project.spring.daytripper;
+package spring;
 
 import java.util.Collection;
 import java.util.List;

@@ -2,37 +2,37 @@ var restApp = angular.module('coursesApp', []);
 
 restApp.constant('baseURL','/courses/');
 
-restApp.controller('CoursesController', function (baseURL, $scope,$http) {
-    fetchCourses();
-    $scope.noCourseSelected = true;
-    $scope.courseBeingUpdated = false;
+restApp.controller('UsersController', function (baseURL, $scope,$http) {
+    fetchUsers();
+    $scope.noSelected = true;
+    $scope.userBeingUpdated = false;
     
-    function fetchCourses() {
-        function storeCourses(data) {
-            $scope.courses = data;
+    function fetchUsers() {
+        function storeUsers(data) {
+            $scope.users = data;
         }
-        $http.get(baseURL).success(storeCourses);
+        $http.get(baseURL).success(storeUsers);
     }
-    $scope.fetchCourses = fetchCourses;
+    $scope.fetchUsers = fetchUsers;
     
-    $scope.beginUpdateOfCourse = function(course) {
-        $scope.courseBeingUpdated = angular.copy(course);
+    $scope.beginUpdateOfUser = function(user) {
+        $scope.userBeingUpdated = angular.copy(user);
     };
-    $scope.updateCourse = function() {
+    $scope.updateUser = function() {
         function resetForm() {
-            $scope.courseBeingUpdated = false;
-            fetchCourses();
+            $scope.userBeingUpdated = false;
+            fetchUsers();
         }
-        var course = $scope.courseBeingUpdated;
-        $http.put(baseURL + course.id, course).success(resetForm);
+        var user = $scope.userBeingUpdated;
+        $http.put(baseURL + user.id, user).success(resetForm);
     };
-    $scope.selectCourse = function(course) {
-        $scope.noCourseSelected = false;
-        $scope.selectedCourse = course;
+    $scope.selectUser = function(user) {
+        $scope.noUserSelected = false;
+        $scope.selectedUser = user;
     };
-    $scope.deleteCourse = function(course) {
-      $http.delete(baseURL + course.id ); 
-      $scope.noCourseSelected = true;
-      fetchCourses();
+    $scope.deleteUser = function(user) {
+      $http.delete(baseURL + user.id ); 
+      $scope.noUserSelected = true;
+      fetchUsers();
     };
 });

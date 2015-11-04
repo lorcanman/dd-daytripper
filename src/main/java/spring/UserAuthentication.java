@@ -1,4 +1,4 @@
-package project.spring.daytripper;
+package spring;
 
 public enum UserAuthentication {
     TEAMMEMBER,
