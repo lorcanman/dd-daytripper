@@ -50,7 +50,7 @@
             </div>
 
             <hr />
-            <button type="button" class="btn btn-sm btn-info" ng-click="today()">Today</button>
+            <button type="button" class="btn btn-sm btn-info" ng-click="controller.callServer()">Call Server</button>
             <button type="button" class="btn btn-sm btn-default" ng-click="setDate(2009, 7, 24)">2009-08-24</button>
             <button type="button" class="btn btn-sm btn-danger" ng-click="clear()">Clear</button>
             <button type="button" class="btn btn-sm btn-default" ng-click="toggleMin()" uib-tooltip="After today restriction">Min date</button>
@@ -78,9 +78,9 @@
           </ul>
         </div>
       </nav>
+      <script src="bower_components/angular/angular.js"></script>
       <script src="bower_components/jquery/dist/jquery.min.js"></script>
       <script src="bower_components/moment/min/moment.min.js"></script>
-      <script src="bower_components/angular/angular.js"></script>
       <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
       <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
       <script src="bower_components/angular-ui-calendar/src/calendar.js"></script>
