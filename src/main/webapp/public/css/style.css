@@ -4,6 +4,11 @@ html {
 body {
   padding-top: 70px;
 }
+
+#logo{
+  width=10px;
+  height=auto;
+}
 .full button span {
   background-color: limegreen;
   border-radius: 32px;
@@ -13,4 +18,31 @@ body {
   background-color: orange;
   border-radius: 32px;
   color: black;
+}
+
+#logOut{
+  margin-top: 5px;
+  float: right;
+}
+
+#calendar{
+  margin-left: 15px;
+}
+
+#cancel{
+  float:right;
+}
+
+#type{
+  float:right;
+}
+
+#project{
+  float: right;
+}
+
+.btn-group {
+  float: right;
+  margin-right: 30px;
+  margin-bottom: 5px;
 }
