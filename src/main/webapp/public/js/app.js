@@ -7,7 +7,7 @@
     this.today = function() {
       this.dt = new Date();
     };
-      
+
     this.callServer = function() {
     	console.log(serverURL);
         $http.get(serverURL).success(function(data){
@@ -44,9 +44,6 @@
       formatYear: 'yy',
       startingDay: 1
     };
-
-    this.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-    this.format = this.formats[0];
 
     this.status = {
       opened: false
