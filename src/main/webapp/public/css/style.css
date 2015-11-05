@@ -3,10 +3,10 @@ html {
 }
 body {
   padding-top: 70px;
-  padding-bottom: 70px;
-  background: black;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 90%;
 }
-
+​
 #logo{
   width=10px;
   height=auto;
@@ -21,35 +21,61 @@ body {
   border-radius: 32px;
   color: black;
 }
-
-#bk-leave-tab {
-  color: white;
-  background-color: limegreen;
-}
-
+​
 #logOut{
-  margin-top: 5px;
+  margin-top: 10px;
   float: right;
+  margin-right:18px;
+  background-color: #999999;
 }
-
+​
 #calendar{
-  margin-left: 15px;
+  margin-left: 7px;
 }
-
+​
 #cancel{
   float:right;
 }
-
+​
 #type{
   float:right;
 }
-
+​
 #project{
   float: right;
 }
-
-.btn-group {
-  float: right;
-  margin-right: 30px;
+​
+#projectButton{
+  margin-right: 0px;
   margin-bottom: 5px;
+}
+​
+#leaveButton{
+  margin-right: 0px;
+  margin-bottom: 5px;
+}
+​
+​
+.col-xs-4{
+  text-align: right;
+  vertical-align: text-bottom;
+  margin-top: 5px;
+}
+​
+​
+.navbar{
+  background-color: lightgrey;
+}
+​
+.normalbutton{
+  background-color: #9acd66;
+}
+​
+#disabledInput{
+  background-color: #9acd66;
+}
+​
+#break{
+  background-color: #9acd66;
+  height: 3px;
 }
