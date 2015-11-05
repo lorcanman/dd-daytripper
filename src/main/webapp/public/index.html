@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DayTripper</title>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css"/>
     <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css"/>
@@ -14,17 +13,17 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#">Daytripper</a>
-        <button type="button" class="btn btn-sm" id="logOut" ng-click="controller.clear()">Log out</button>
+        <button type="button" class="btn btn-sm" id="logOut" ng-click="clear()">Log out</button>
     </div>
 </nav>
-​
+
 <div class="container">
     <div class="row">
         <div style="display:inline-block;">
-            <uib-datepicker id="calendar" ng-model="controller.dt" min-date="minDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)"></uib-datepicker>
+            <uib-datepicker id="calendar" ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)"></uib-datepicker>
         </div>
     </div>
-​
+
     <div class="row">
         <div class="col-xs-4">
             <p>Project</p>
@@ -42,7 +41,7 @@
             </ul>
         </div>
     </div>
-​
+
     <div class="row">
         <div class="col-xs-4">
             <p>Type</p>
@@ -61,35 +60,35 @@
             </ul>
         </div>
     </div>
-​
+
     <div class="row">
         <div class="col-xs-4">
             <p>Start date</p>
         </div>
         <div class="col-xs-7">
             <p class="input-group">
-                <input type="date" class="form-control" uib-datepicker-popup ng-model="controller.dt" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                <input type="date" class="form-control" uib-datepicker-popup ng-model="dt" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
                     <span class="input-group-btn">
-                      <button type="button" class="btn btn-default normalbutton" ng-click="controller.open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                      <button type="button" class="btn btn-default normalbutton" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
                     </span>
             </p>
         </div>
     </div>
-​
+
     <div class="row">
         <div class="col-xs-4">
             <p>End date</p>
         </div>
         <div class="col-xs-7 startdate">
             <p class="input-group">
-                <input type="date" class="form-control" uib-datepicker-popup ng-model="controller.dt" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                <input type="date" class="form-control" uib-datepicker-popup ng-model="dt" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
                     <span class="input-group-btn">
-                      <button type="button" class="btn btn-default normalbutton" ng-click="controller.open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                      <button type="button" class="btn btn-default normalbutton" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
                     </span>
             </p>
         </div>
     </div>
-​
+
     <div class="row">
         <div class="col-xs-4">
             <p>Total days</p>
@@ -98,20 +97,20 @@
             <input class="form-control" id="disabledInput" type="text" placeholder="Total days" disabled>
         </div>
     </div>
-​
+
     <hr id="break"/>
-​
-    <button type="button" class="btn btn-sm normalbutton" ng-click="controller.today()">Submit</button>
-    <button type="button" class="btn btn-sm" id="cancel" ng-click="controller.clear()">Cancel</button>
-​
+
+    <button type="button" class="btn btn-sm normalbutton" ng-click="today()">Submit</button>
+    <button type="button" class="btn btn-sm" id="cancel" ng-click="clear()">Cancel</button>
+
 </div>
 <hr/>
-​
+
+</div>
+
 </div>
 ​
-</div>
-​
-​
+
 </div>
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
@@ -131,5 +130,6 @@
 <script src="bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
 <script src="bower_components/fullcalendar/dist/gcal.js"></script>
 <script src="js/app.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </body>
 </html>
