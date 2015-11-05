@@ -1,10 +1,18 @@
 (function() {
   angular.module('dayTripperApp', ['ui.calendar', 'ui.bootstrap'])
-         .controller('calendarController', [calendarController])
+         .constant('serverURL', 'http://localhost:8080/leaves')
+         .controller('calendarController', ['serverURL', '$http', calendarController])
          .controller('bookingController', [bookingController]);
-  function calendarController(){
+  function calendarController(serverURL, $http){
     this.today = function() {
       this.dt = new Date();
+    };
+      
+    this.callServer = function() {
+    	console.log(serverURL);
+        $http.get(serverURL).success(function(data){
+            console.log(data);
+        });
     };
 
     this.today();
