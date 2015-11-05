@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="dayTripperApp">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>DayTripper</title>
+      <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+      <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css"/>
+      <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css"/>
+      <link rel="stylesheet" href="css/style.css"/>
+  </head>
+  <body ng-controller="leavesController as controller">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Daytripper</a>
+            <a class="btn btn-default" href="#" role="button">View Leaves</a>
+            <button type="button" class="btn btn-sm" id="logOut">Log out</button>
+        </div>
+    </nav>
+    <table class="table table-bordered table-responsive">
+      <thead>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Leave Type</th>
+      </thead>
+      <tr ng-repeat="leave in controller.leaves">
+        <td>{{leave.startDate}}</td>
+        <td>{{leave.endDate}}</td>
+        <td>{{leave.type}}</td>
+      </tr>
+    </table>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular-ui-calendar/src/calendar.js"></script>
+    <script src="bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+    <script src="bower_components/fullcalendar/dist/gcal.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
