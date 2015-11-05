@@ -5,20 +5,13 @@
   "main": "app.js",
   "scripts": {
     "test": "./node_modules/.bin/karma start my.conf.js",
-    "bower": "./node_modules/.bin/bower install --save",
+    "bower-in": "./node_modules/.bin/bower install --save",
+    "bower-un":"./node_modules/.bin/bower uninstall --save",
     "karma": "./node_modules/.bin/karma"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bower": "^1.6.5"
-  },
-  "devDependencies": {
-    "jasmine-core": "^2.3.4",
-    "karma": "^0.13.15",
-    "karma-chrome-launcher": "^0.2.1",
-    "karma-jasmine": "^0.3.6",
-    "karma-phantomjs-launcher": "^0.2.1",
-    "phantomjs": "^1.9.18"
   }
 }

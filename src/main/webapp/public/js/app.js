@@ -1,7 +1,8 @@
 (function() {
   angular.module('dayTripperApp', ['ui.calendar', 'ui.bootstrap'])
-         .controller('calendarController', [calendarController])
-         .controller('bookingController', [bookingController]);
+         .constant('serverURL', 'http://localhost:8080/leaves')
+         .controller('leavesController', ['serverURL', '$http', leavesController])
+         .controller('calendarController', [calendarController]);
   function calendarController(){
     this.today = function() {
       this.dt = new Date();
@@ -36,9 +37,6 @@
       formatYear: 'yy',
       startingDay: 1
     };
-
-    this.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-    this.format = this.formats[0];
 
     this.status = {
       opened: false
@@ -75,22 +73,27 @@
 
       return '';
     };
-    // var date = new Date();
-    // var d = date.getDate();
-    // var m = date.getMonth();
-    // var y = date.getFullYear();
-    // this.eventSource = {};
-    // this.uiConfig = {
-    //   calendar: {
-    //     height: 250,
-    //     editable: true,
-    //     header:{
-    //       left: 'month basicWeek basicDay agendaWeek agendaDay',
-    //       center: 'title',
-    //       right: 'today prev,next'
-    //     }
-    //   }
-    // };
   };
-  function bookingController(){};
+
+  function leavesController(serverURL, $http){
+    var theController = this;
+    function display(data) {
+      theController.leaves = data;
+    }
+    function getPreviousLeaves(url, displayFunction) {
+      function dateConversion(data) {
+        function convertDateOf(leave) {
+          var startDate = leave.startDate;
+          var endDate = new Date().toDateString();
+          
+          leave.startDate = new Date(startDate).toDateString();
+          leave.endDate = new Date(endDate).toDateString();
+        }
+        data.forEach(convertDateOf);
+        displayFunction(data);
+      }
+      $http.get(url).success(dateConversion);
+    }
+    getPreviousLeaves(serverURL, display);
+  }
 })();

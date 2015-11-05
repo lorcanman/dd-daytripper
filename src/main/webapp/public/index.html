@@ -1,110 +1,135 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="dayTripperApp">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>DayTripper</title>
-      <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
-      <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css"/>
-      <link rel="stylesheet" href="css/style.css"/>
-      <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css"/>
-  </head>
-  <body ng-controller="calendarController as controller">
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Logo</a>
-            <button type="button" class="btn btn-sm btn-danger" id="logOut" ng-click="clear()">Log out</button>
-        </div>
-    </nav>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DayTripper</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css"/>
+    <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body ng-controller="calendarController as controller">
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
-        <div class="row">
-            <div style="display:inline-block; min-height:290px;">
-                <uib-datepicker id="calendar" ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)"></uib-datepicker>
-            </div>
-            </div>
-
-          <div class="row">
-              <div class="btn-group" id="projectButton">
-                <button type="button" class="btn">Project</button>
-                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="caret"></span>
-                    <span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Project A</a></li>
-                    <li><a href="#">Project B</a></li>
-                    <li><a href="#">Project X</a></li>
-                </ul>
-            </div>
-        </div>
-
-            <div class="row"><div class="btn-group" id="leaveButton">
-                <button type="button" class="btn">Type of leave</button>
-                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="caret"></span>
-                    <span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Holiday</a></li>
-                    <li><a href="#">Study</a></li>
-                    <li><a href="#">Sickness</a></li>
-                    <li><a href="#">Bereavement</a></li>
-                </ul>
-            </div>
-                </div>
-
-            <div class="col-md-6">
-                <p class="input-group">
-                    <input type="date" class="form-control" uib-datepicker-popup ng-model="dt" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-                        <span class="input-group-btn">
-                          <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                        </span>
-                </p>
-            </div>
-
-            <div class="col-md-6">
-                <p class="input-group">
-                    <input type="date" class="form-control" uib-datepicker-popup ng-model="dt" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-                        <span class="input-group-btn">
-                          <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                        </span>
-                </p>
-            </div>
-
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <input class="form-control" id="disabledInput" type="text" placeholder="Total days" disabled>
-            </div>
-        </div>
-
-        <hr />
-        <button type="button" class="btn btn-sm btn-info" ng-click="today()">Submit</button>
-        <button type="button" class="btn btn-sm btn-danger" id="cancel" ng-click="clear()">Cancel</button>
+        <a class="navbar-brand" href="#">Daytripper</a>
+        <button type="button" class="btn btn-sm" id="logOut" ng-click="clear()">Log out</button>
     </div>
-    <hr/>
-    </div>
-    ​
+</nav>
 
+<div class="container">
+    <div class="row">
+        <div style="display:inline-block;">
+            <uib-datepicker id="calendar" ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)"></uib-datepicker>
+        </div>
     </div>
-    <nav class="navbar navbar-default navbar-fixed-bottom">
-        <div class="container">
-            <ul class="nav nav-tabs">
-                <li role="presentation"><a href="#">Home</a></li>
-                <li role="presentation" class="active"><a href="#">Book leave</a></li>
-                <li role="presentation"><a href="#">View leave</a></li>
+
+    <div class="row">
+        <div class="col-xs-4">
+            <p>Project</p>
+        </div>
+        <div class="btn-group col-xs-8" id="projectButton">
+            <button type="button" class="btn normalbutton">Project</button>
+            <button type="button" class="btn dropdown-toggle normalbutton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#">Project A</a></li>
+                <li><a href="#">Project B</a></li>
+                <li><a href="#">Project X</a></li>
             </ul>
         </div>
-    </nav>
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/moment/min/moment.min.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="bower_components/angular-ui-calendar/src/calendar.js"></script>
-    <script src="bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
-    <script src="bower_components/fullcalendar/dist/gcal.js"></script>
-    <script src="js/app.js"></script>
-  </body>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-4">
+            <p>Type</p>
+        </div>
+        <div class="btn-group col-xs-8" id="leaveButton">
+            <button type="button" class="btn normalbutton">Type</button>
+            <button type="button" class="btn dropdown-toggle normalbutton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#">Holiday</a></li>
+                <li><a href="#">Study</a></li>
+                <li><a href="#">Sickness</a></li>
+                <li><a href="#">Bereavement</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-4">
+            <p>Start date</p>
+        </div>
+        <div class="col-xs-7">
+            <p class="input-group">
+                <input type="date" class="form-control" uib-datepicker-popup ng-model="dt" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default normalbutton" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-4">
+            <p>End date</p>
+        </div>
+        <div class="col-xs-7 startdate">
+            <p class="input-group">
+                <input type="date" class="form-control" uib-datepicker-popup ng-model="dt" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default normalbutton" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-4">
+            <p>Total days</p>
+            </div>
+        <div class="col-xs-8">
+            <input class="form-control" id="disabledInput" type="text" placeholder="Total days" disabled>
+        </div>
+    </div>
+
+    <hr id="break"/>
+
+    <button type="button" class="btn btn-sm normalbutton" ng-click="today()">Submit</button>
+    <button type="button" class="btn btn-sm" id="cancel" ng-click="clear()">Cancel</button>
+
+</div>
+<hr/>
+
+</div>
+
+</div>
+​
+
+</div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <ul class="nav nav-tabs">
+            <li role="presentation"><a href="#">Home</a></li>
+            <li role="presentation" class="active"><a href="#">Book leave</a></li>
+            <li role="presentation"><a href="#">View leave</a></li>
+        </ul>
+    </div>
+</nav>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/moment/min/moment.min.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/angular-ui-calendar/src/calendar.js"></script>
+<script src="bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+<script src="bower_components/fullcalendar/dist/gcal.js"></script>
+<script src="js/app.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+</body>
 </html>
